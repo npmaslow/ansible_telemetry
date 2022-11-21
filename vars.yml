@@ -1,0 +1,19 @@
+# BIG-IP MGMT address and username/password
+f5app_services_package_server: "xxx.xxx.xxx.xxx" 
+f5app_services_package_server_port: "443"
+f5app_services_package_user: "*****"
+f5app_services_package_password: "*****"
+f5app_services_package_validate_certs: "false"
+f5app_services_package_transport: "rest"
+
+# URI from where latest RPM version and package will be downloaded
+ts_uri: "https://github.com/F5Networks/f5-telemetry-streaming/releases"
+as3_uri: "https://github.com/F5Networks/f5-appsvcs-extension/releases"
+
+#If AVR module logs needed then set to 'yes' else leave it as 'no'
+avr_needed: "no"
+
+# Virtual servers in your environment to assign the logging profiles (If AVR set to 'yes')
+virtual_servers:
+- "vs1"
+- "vs2"
