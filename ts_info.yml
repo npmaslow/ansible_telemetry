@@ -1,0 +1,23 @@
+- hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Check
+      uri:
+        url: https://192.168.86.41/mgmt/shared/telemetry/info
+        user: admin
+        password: notarealpassword
+        method: GET
+        headers:
+          Content-Type: application/json
+          Accept: application/json
+        force_basic_auth: yes
+        status_code: 200
+        return_content: true
+        validate_certs: no
+      register: json_response
+
+    - name: printoutput
+      debug:
+        var: json_response
